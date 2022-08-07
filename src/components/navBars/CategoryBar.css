@@ -1,0 +1,40 @@
+.category {
+  font-size: 1.1em;
+  width: 11%;
+  height: 50px;
+  text-align: center;
+  padding: 0;
+  border: none;
+  background-color: #424242;
+}
+.selectedButton {
+  font-size: 1.1em;
+  width: 11%;
+  height: 50px;
+  text-align: center;
+  padding: 0;
+  border: none;
+  background-color: black;
+}
+
+.selected {
+  color: #03cfff;
+
+  text-decoration: none;
+}
+
+.links {
+  color: white;
+  text-decoration: none;
+}
+
+.categoryBar {
+  width: 100%;
+  display: flex;
+  background-color: #424242;
+}
+
+.category:hover {
+  background-color: #606060;
+  color: #03cfff;
+}

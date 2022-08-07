@@ -1,0 +1,16 @@
+.newsBody {
+  display: flex;
+}
+
+.imgContainer {
+  height: 200px;
+}
+
+img {
+  max-height: 100%;
+  width: auto;
+}
+
+.newsDescription {
+  padding-left: 20px;
+}
