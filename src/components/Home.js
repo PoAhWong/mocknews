@@ -5,8 +5,9 @@ import NavBar from "./navBars/NavBar";
 import Main from "./body/Main";
 import { useParams } from "react-router-dom";
 
+const API_KEY = process.env.REACT_APP_API_KEY;
+
 function Home() {
-  const API_KEY = process.env.REACT_APP_API_KEY;
   const theme = createTheme({
     palette: {
       primary: {
