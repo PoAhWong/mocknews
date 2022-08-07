@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import { createTheme, colors, ThemeProvider } from "@mui/material";
 import NavBar from "./navBars/NavBar";
 import Main from "./body/Main";
-import { Outlet, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function Home() {
-  const THENEWS_API_KEY = process.env.REACT_APP_THENEWS_API_KEY;
+  const API_KEY = process.env.REACT_APP_API_KEY;
   const theme = createTheme({
     palette: {
       primary: {
@@ -30,7 +30,7 @@ function Home() {
     let searchQuery = !!search ? `&search=${search}` : "";
     axios
       .get(
-        `https://api.thenewsapi.com/v1/news/top?api_token=${THENEWS_API_KEY}&locale=us,au${categoriesQuery}${searchQuery}&limit=5`
+        `https://api.thenewsapi.com/v1/news/top?api_token=${API_KEY}&locale=us,au${categoriesQuery}${searchQuery}&limit=5`
       )
       .then((results) => {
         setTopNews(results.data.data);
