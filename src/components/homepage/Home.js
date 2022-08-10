@@ -2,7 +2,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { createTheme, colors, ThemeProvider } from "@mui/material";
 import NavBar from "../navBars/NavBar";
-import Top1News from "./Top1News";
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 function Home() {
