@@ -7,7 +7,6 @@ import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
-import CategoryBar from "./CategoryBar";
 import "./NavBar.css";
 
 const Search = styled("div")(({ theme }) => ({
@@ -52,7 +51,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function NavBar({ selectedCategory, handleSearch }) {
+export default function NavBar(props) {
   return (
     <div className="navBar">
       <Box>
@@ -69,20 +68,23 @@ export default function NavBar({ selectedCategory, handleSearch }) {
                 MOCKNEWS{" "}
               </Link>
             </Typography>
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                onKeyUp={handleSearch}
-                placeholder="Search…"
-                inputProps={{ "aria-label": "search" }}
-              />
-            </Search>
+            {props.searchBar ? (
+              <Search>
+                <SearchIconWrapper>
+                  <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase
+                  onKeyUp={props.handleSearch}
+                  placeholder="Search…"
+                  inputProps={{ "aria-label": "search" }}
+                />
+              </Search>
+            ) : (
+              <></>
+            )}
           </Toolbar>
         </AppBar>
       </Box>
-      <CategoryBar selectedCategory={selectedCategory} />
     </div>
   );
 }

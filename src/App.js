@@ -1,13 +1,16 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
+import Home from "./components/homepage/Home";
+import NewsPage from "./components/newspage/NewsPage";
 import PageNotFound from "./components/PageNotFound";
 import "./App.css";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/:category" element={<Home />} />
+      <Route path="/" element={<NewsPage />} />
+      <Route path="news" element={<NewsPage />}>
+        <Route path=":category" element={<NewsPage />} />
+      </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

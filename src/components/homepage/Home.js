@@ -1,10 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { createTheme, colors, ThemeProvider } from "@mui/material";
-import NavBar from "./navBars/NavBar";
-import Main from "./body/Main";
-import { useParams } from "react-router-dom";
-
+import NavBar from "../navBars/NavBar";
+import Top1News from "./Top1News";
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 function Home() {
@@ -16,7 +14,6 @@ function Home() {
     },
   });
   const [topNews, setTopNews] = useState([]);
-  let { category } = useParams();
   const [search, setSearch] = useState();
 
   const handleSearch = (event) => {
@@ -27,22 +24,19 @@ function Home() {
 
   useEffect(() => {
     document.title = "MockNews";
-    let categoriesQuery = !!category ? `&categories=${category}` : "";
-    let searchQuery = !!search ? `&search=${search}` : "";
     axios
       .get(
-        `https://api.thenewsapi.com/v1/news/top?api_token=${API_KEY}&locale=us,au${categoriesQuery}${searchQuery}&limit=5`
+        `https://api.thenewsapi.com/v1/news/top?api_token=${API_KEY}&locale=us,au&limit=5`
       )
       .then((results) => {
         setTopNews(results.data.data);
-      })
-      .then(setSearch(""));
-  }, [category, search]);
+      });
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
-      <NavBar selectedCategory={category} handleSearch={handleSearch} />
-      <Main news={topNews} selectedCategory={category} />
+      <NavBar searchBar={false} />
+      {!!topNews[0] && <Top1News news={topNews[0]} />}
     </ThemeProvider>
   );
 }

@@ -10,12 +10,13 @@ export default function News({ news }) {
           <img src={news.image_url} alt="" />
         </div>
         <p className="newsDescription">
-          {news.description}{" "}
+          {news.description.concat(" ").repeat(4)}{" "}
           <a target="_blank" href={news.url}>
             Read More...
           </a>
         </p>
       </div>
+      <hr className="news-hr"></hr>
     </div>
   );
 }

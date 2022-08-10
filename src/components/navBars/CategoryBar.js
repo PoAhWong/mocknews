@@ -24,7 +24,7 @@ export default function CategoryBar({ selectedCategory }) {
           >
             <Link
               className={category === selectedCategory ? "selected" : "links"}
-              to={`/${category}`}
+              to={`/news/${category}`}
             >
               {category.toUpperCase()}
             </Link>
