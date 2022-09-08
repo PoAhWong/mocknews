@@ -68,3 +68,76 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+1. Install Git and the Xcode command line tools
+
+   Try running this command. You should be prompted to install the Xcode Command Line Tools.
+    ```bash
+    git --version
+    ```
+
+   Otherwise, you can [install Git (and the Xcode Command Line Tools) from a binary installer](https://git-scm.com/download/mac).
+
+1. Clone the Repo
+
+    ```bash
+    git clone git@gitlab.com:msts-enterprise/caas/caas.git
+    ```
+
+1. Install [Docker for Mac](https://www.docker.com/docker-mac)
+
+   Here is the direct download link, so you don't need to create a Docker Hub account.
+
+   TODO: Change link to point to version supported by CI
+   https://download.docker.com/mac/stable/Docker.dmg
+
+1. Install a postgres client
+
+    For Mac
+
+    ```bash
+    brew install postgres
+    ```
+
+    For WSL
+
+    ```bash
+    sudo apt install postgresql
+    ```
+
+    For more information on installing postgres clients, check out
+    https://www.postgresql.org/download/
+
+1. Install aws-mfa
+   For Mac
+   Install Python
+   ```bash
+   brew install python3
+   ```
+   Install aws-mfa
+   ```bash
+   pip3 install aws-mfa
+   ```
+   Create aws credentials file  (located at ~/.aws/credentials), following is an example of your credentials configuration
+   ```ini
+   [default-long-term]
+   aws_access_key_id = YOUR_LONGTERM_KEY_ID
+   aws_secret_access_key = YOUR_LONGTERM_ACCESS_KEY
+   ```
+
+   TODO: Change link to point to version supported by CI
+
+1. Install aws-cli
+   Install Version 1.x
+   ```bash
+   pip3 install awscli==1.16.312 --upgrade --user
+   ```
+
+   Verify that the AWS CLI is installed correctly
+   ```bash
+   aws --version
+   ```
+   If the program isn't found, add it to your command line path.
+
+
+   TODO: Change link to point to version supported by CI
