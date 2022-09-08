@@ -112,7 +112,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
    ```bash
    brew install python3
    ```
-   Install aws-mfa
    ```bash
    pip3 install aws-mfa
    ```
