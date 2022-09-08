@@ -123,7 +123,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
    aws_secret_access_key = YOUR_LONGTERM_ACCESS_KEY
    ```
 
-   TODO: Change link to point to version supported by CI
 
 1. Install aws-cli Version 1
    ```bash
@@ -137,4 +136,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
    If the program isn't found, add it to your command line path.
 
 
-   TODO: Change link to point to version supported by CI
