@@ -109,8 +109,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
     https://www.postgresql.org/download/
 
 1. Install aws-mfa
-   For Mac
-   Install Python
    ```bash
    brew install python3
    ```
@@ -127,8 +125,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
    TODO: Change link to point to version supported by CI
 
-1. Install aws-cli
-   Install Version 1.x
+1. Install aws-cli Version 1
    ```bash
    pip3 install awscli==1.16.312 --upgrade --user
    ```
